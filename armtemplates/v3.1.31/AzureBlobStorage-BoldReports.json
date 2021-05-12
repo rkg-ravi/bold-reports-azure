@@ -25,7 +25,11 @@
         "description": "Type of the storage account created"
       },
       "defaultValue": "Standard_LRS"
-    }
+    },
+    "utcShortValue": {
+      "type": "string",
+      "defaultValue": "[utcNow('d')]"
+	}
   },
   "variables": {
     "WebAppSvcPlanWorkerSize": "0",
@@ -40,7 +44,18 @@
       "apiVersion": "2014-06-01",
       "dependsOn": [],
       "tags": {
-        "displayName": "AppSvcPlan"
+        "displayName": "AppSvcPlan",
+        "AppName": "[resourceGroup().tags['AppName']]",
+        "Approver": "[resourceGroup().tags['Approver']]",
+        "BusinessUnit": "[resourceGroup().tags['BusinessUnit']]",
+        "Env": "[resourceGroup().tags['Env']]",
+        "HostModel": "[resourceGroup().tags['HostModel']]",
+        "Importance": "[resourceGroup().tags['Importance']]",
+        "Owner": "[resourceGroup().tags['Owner']]",
+        "Platform": "NA",
+        "ProductName": "[resourceGroup().tags['ProductName']]",
+        "Requester": "ranganathan.arumugam@syncfusion.com",
+        "StartDate": "[parameters('utcShortValue')]"
       },
       "properties": {
         "name": "[variables('WebAppSvcPlanName')]",
@@ -58,7 +73,18 @@
       ],
       "tags": {
         "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/', variables('WebAppSvcPlanName'))]": "Resource",
-        "displayName": "WebApp"
+        "displayName": "WebApp",
+        "AppName": "[resourceGroup().tags['AppName']]",
+        "Approver": "[resourceGroup().tags['Approver']]",
+        "BusinessUnit": "[resourceGroup().tags['BusinessUnit']]",
+        "Env": "[resourceGroup().tags['Env']]",
+        "HostModel": "[resourceGroup().tags['HostModel']]",
+        "Importance": "[resourceGroup().tags['Importance']]",
+        "Owner": "[resourceGroup().tags['Owner']]",
+        "Platform": "NA",
+        "ProductName": "[resourceGroup().tags['ProductName']]",
+        "Requester": "ranganathan.arumugam@syncfusion.com",
+        "StartDate": "[parameters('utcShortValue')]"
       },
       "properties": {
         "name": "[parameters('WebAppName')]",
@@ -173,7 +199,18 @@
       "apiVersion": "2015-06-15",
       "dependsOn": [],
       "tags": {
-        "displayName": "storageaccount"
+        "displayName": "storageaccount",
+        "AppName": "[resourceGroup().tags['AppName']]",
+        "Approver": "[resourceGroup().tags['Approver']]",
+        "BusinessUnit": "[resourceGroup().tags['BusinessUnit']]",
+        "Env": "[resourceGroup().tags['Env']]",
+        "HostModel": "[resourceGroup().tags['HostModel']]",
+        "Importance": "[resourceGroup().tags['Importance']]",
+        "Owner": "[resourceGroup().tags['Owner']]",
+        "Platform": "NA",
+        "ProductName": "[resourceGroup().tags['ProductName']]",
+        "Requester": "ranganathan.arumugam@syncfusion.com",
+        "StartDate": "[parameters('utcShortValue')]"
       },
       "properties": {
         "accountType": "[parameters('storageAccountType')]"
